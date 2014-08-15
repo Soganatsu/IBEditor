@@ -21,8 +21,9 @@
 var ibeMeshTerrain = function(){
 		var terrain = new BABYLON.Mesh.CreateGroundFromHeightMap("terGround", "hm_test.png", 100, 100, 50, 0, 10, scene, false);
 		var tMat = new BABYLON.StandardMaterial("testMatTerrain", scene);
-		tMat.wireframe = true;
+		tMat.wireframe = false;
 		terrain.material = tMat;
+		return terrain;
 };
 var ibeDiffuseMap =  function(){};
 var ibeHeightMap =  function(){};

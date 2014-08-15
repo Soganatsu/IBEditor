@@ -41,9 +41,15 @@ var ibeEditor3DAssets = function(){};
 var ibeEditor2DAssets = function(){};
 
 // Camera Menu Functions
-var ibeCameraGame = function(){};
-var ibeCameraFPS = function(){};
-var ibeCameraMaya = function(){};
+var ibeCameraGame = function(){
+	document.getElementById("vpd-cammode").innerHTML = "Game Camera";
+};
+var ibeCameraFPS = function(){
+	document.getElementById("vpd-cammode").innerHTML = "FPS Camera";
+};
+var ibeCameraMaya = function(){
+	document.getElementById("vpd-cammode").innerHTML = "Maya Camera";
+};
 
 // View Menu Functions
 var ibeViewGrid = function(){
@@ -85,7 +91,11 @@ var ibeViewGrid = function(){
 var testTerrain = ibeMeshTerrain();
 
 var ibeViewWireframe = function(){
-	testTerrain.wireframe = false;
+	if(testTerrain.material.wireframe == true){
+		testTerrain.material.wireframe = false;
+	} else {
+		testTerrain.material.wireframe = true;
+	}
 };
 var ibeViewSkybox = function(){};
 var ibeViewBoundingBox = function(){};

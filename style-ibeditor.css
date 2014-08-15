@@ -75,3 +75,18 @@ html, body {
 	display:block;
 	cursor:pointer;
 }
+
+.viewport-data{
+	position:absolute;
+	right:5px;
+	top:30px;
+}
+.viewport-data ul, .viewport-data li {
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-family: Arial;
+	font-size:.8em;
+	color:white;
+	text-align:right;
+}

@@ -17,7 +17,24 @@
  *    with this program; if not, write to the Free Software Foundation, Inc.,
  *    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
+var mouse = new BABYLON.Vector2();
 var selectedObjectName;
+var camPos, camPosN;
+
+function onDocumentMouseMove( event ) {
+	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	mouse.y = -( event.clientY / window.innerHeight ) * 2 + 1;
+}
+function onCameraMove(){
+	camPos = scene.activeCamera.position;
+	document.getElementById("vpd-campos").innerHTML = "Camera Pos: X:"+camPos.x.toFixed(2)+" Y:"+camPos.y.toFixed(2)+" Z:"+camPos.z.toFixed(2);
+}
+canvas.addEventListener("mousemove", function(mpos){
+	var xpos = mpos.clientX;
+	var ypos = mpos.clientY;
+	document.getElementById("vpd-curpos").innerHTML = "Mouse Pos: X:"+xpos+" Y:"+ypos;
+	onCameraMove();
+});
 canvas.addEventListener("mousedown", function (evt) {
 	var left, right;
 	left = 0;
@@ -29,10 +46,12 @@ canvas.addEventListener("mousedown", function (evt) {
 	        var dir = pickResult.pickedPoint.subtract(scene.activeCamera.position);
 	        dir.normalize();
 	        pickResult.pickedMesh.applyImpulse(dir.scale(50), pickResult.pickedPoint);
-	        console.log("Selected " + selectedObjectName);
+	        //console.log("Selected " + selectedObjectName);
+    		document.getElementById("vpd-selobj").innerHTML = "Selected: " + selectedObjectName;
 	    } else {
 	    	if(pickResult.pickedMesh == null && (selectedObjectName != "")){
-	    		console.log("Selection Cleared");
+	    		//console.log("Selection Cleared");
+	    		document.getElementById("vpd-selobj").innerHTML = "Selected: (empty)";
 	    		selectedObjectName = "";
 	    	}
 	    }
