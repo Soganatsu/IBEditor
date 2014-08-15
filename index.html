@@ -1,0 +1,92 @@
+<!-- 
+/**
+ * 	  Ironbane Editor
+ * 	  Developed by Ironbane Team, 2014
+ * 	  Written By: Jesse Stojan
+ * 	  Copyright (C) 2014  Ironbane Team
+ *
+ *    This program is free software; you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, GNU General Public License version 2 of the License.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License along
+ *    with this program; if not, write to the Free Software Foundation, Inc.,
+ *    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */-->
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style-ibeditor.css" />
+<script src="scripts/babylon.1.13.js"></script>
+<script src="scripts/cannon.js"></script>
+<script src="scripts/hand-1.3.8.js"></script>
+<script src="scripts/keypress-2.0.3.min.js"></script>
+<script src="scripts/modernizr.js"></script>
+</head>
+<body>
+<div id="menu-bar">
+	<ul>
+		<li>File
+			<ul>
+				<li onClick="ibeOpen()">Open (Map)</li>
+				<li onClick="ibeUpdate()">Update (Reload)</li>
+				<li onClick="ibeCommit()">Commit (Save)</li>
+				<li class="menu-bar-separator"><hr></li>
+				<li onClick="ibeImport()">Import</li>
+				<li onClick="ibeExport()">Export</li>
+				<li class="menu-bar-separator"><hr></li>
+				<li onClick="ibeLogout()">Logout</li>
+			</ul>
+		</li>
+		<li>Edit
+			<ul>
+				<li onClick="ibeUndo()">Undo</li>
+				<li onClick="ibeRedo()">Redo</li>
+				<li class="menu-bar-separator"><hr></li>
+				<li onClick="ibeCut()">Cut</li>
+				<li onClick="ibeCopy()">Copy</li>
+				<li onClick="ibePaste()">Paste</li>
+				<li class="menu-bar-separator"><hr></li>
+				<li onClick="ibeSettings()">Settings</li>
+			</ul>
+		</li>
+		<li>Windows
+			<ul>
+				<li onClick="ibeEditorItem()">Item Editor</li>
+				<li onClick="ibeEditorNPC()">NPC Editor</li>
+				<li onClick="ibeEditor3DAssets()">3D Asset Editor</li>
+				<li onClick="ibeEditor2DAssets()">2D Asset Editor</li>
+			</ul>
+		</li>
+		<li>Camera
+			<ul>
+				<li onClick="ibeCameraGame()">Game Camera Mode</li>
+				<li onClick="ibeCameraFPS()">FPS Camera Mode</li>
+				<li onClick="ibeCameraMaya()">Maya Camera Mode</li>
+			</ul>
+		</li>
+		<li>View
+			<ul>
+				<li onClick="ibeViewGrid()">Grid</li>
+				<li onClick="ibeViewWireframe()">Wireframe Mode</li>
+				<li onClick="ibeViewSkybox()">Skybox</li>
+				<li onClick="ibeViewBoundingBox()">Bounding Box</li>
+				<li onClick="ibeViewHighlightingFaces()">Highlighting Faces</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<canvas id="renderCanvas"></canvas>
+<script src="scripts/ibeditor.js"></script>
+<script src="scripts/ib-camera.js"></script>
+<script src="scripts/ib-terrain.js"></script>
+<script src="scripts/ib-particle.js"></script>
+<script src="scripts/ib-sound.js"></script>
+<script src="scripts/ib-interface.js"></script>
+</body>
+</html>
