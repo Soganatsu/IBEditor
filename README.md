@@ -3,8 +3,8 @@ IBEditor
 
 	Title: Ironbane Editor
 	Developed by Ironbane Team, 2014
-  Written By: Jesse Stojan
-  Copyright (C) 2014  Ironbane Team
+	Written By: Jesse Stojan
+	Copyright (C) 2014  Ironbane Team
    
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
