@@ -93,8 +93,10 @@ var testTerrain = ibeMeshTerrain();
 var ibeViewWireframe = function(){
 	if(testTerrain.material.wireframe == true){
 		testTerrain.material.wireframe = false;
+		document.getElementById("wireframe-mode-toggle").style.display = "none";
 	} else {
 		testTerrain.material.wireframe = true;
+		document.getElementById("wireframe-mode-toggle").style.display = "block";
 	}
 };
 var ibeViewSkybox = function(){};

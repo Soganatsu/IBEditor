@@ -21,6 +21,10 @@ var mouse = new BABYLON.Vector2();
 var selectedObjectName;
 var camPos, camPosN;
 
+var datetime = new Date();
+var time = datetime.getTime();
+var timeN;
+
 function onDocumentMouseMove( event ) {
 	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = -( event.clientY / window.innerHeight ) * 2 + 1;
@@ -34,7 +38,16 @@ canvas.addEventListener("mousemove", function(mpos){
 	var ypos = mpos.clientY;
 	document.getElementById("vpd-curpos").innerHTML = "Mouse Pos: X:"+xpos+" Y:"+ypos;
 	onCameraMove();
+	
+	var fpscheck = function(){
+		if(time != timeN){
+			var fps = scene.getLastFrameDuration().toFixed(2);
+			document.getElementById("vpd-fps").innerHTML = "FPS: "+fps;
+		}
+	}
 });
+
+
 canvas.addEventListener("mousedown", function (evt) {
 	var left, right;
 	left = 0;
