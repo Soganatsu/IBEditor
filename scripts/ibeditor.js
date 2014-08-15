@@ -21,15 +21,14 @@
 var canvas = document.getElementById("renderCanvas");
 var engine = new BABYLON.Engine(canvas, true);
 
-// Now create a basic Babylon Scene object 
+//Now create a basic Babylon Scene object 
 var scene = new BABYLON.Scene(engine);
 
-// This creates and positions a free camera
+//This creates and positions a free camera
 var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
 
 //This begins the creation of a function that we will 'call' just after it's built
 var createScene = function () {
-
   // Set default background color
   scene.clearColor = new BABYLON.Color3(.15,.15,.15);
   
@@ -64,3 +63,4 @@ engine.runRenderLoop(function () {
 window.addEventListener("resize", function () {
   engine.resize();
 });
+

@@ -48,27 +48,40 @@ var ibeCameraMaya = function(){};
 // View Menu Functions
 var ibeViewGrid = function(){
 	var showGrid = false;
-	var gridLines;
+	var lines;
+	var xLines;
+	var zLines;
+	var gXLines = [];
+	var gZLines = [];
 	var gridLineColor = new BABYLON.Color3(.5, 0.5, 0.5);
+	var width = 10;
+	var height = 10;
+	xLines = BABYLON.Mesh.CreateLines("lines", [
+	       new BABYLON.Vector3(0, 0, 0),
+	       new BABYLON.Vector3(0, 0, width)
+	   ], scene);
+	zLines = BABYLON.Mesh.CreateLines("lines", [
+	       new BABYLON.Vector3(0, 0, 0),
+	       new BABYLON.Vector3(height, 0, 0)
+       ], scene);
+	xLines.color = gridLineColor;
+	zLines.color = gridLineColor;
 	if(showGrid == true){
 		showGrid = false;
 	} else {
 		showGrid = true;
-		for(var x = 0; x < 10; x++){
-			for(var z = 0; z < 10; z++){
-				gridLines = BABYLON.Mesh.CreateLines("lines", [
-				       new BABYLON.Vector3(x, 0, z),
-				       new BABYLON.Vector3(x+1, 0, z),
-				       new BABYLON.Vector3(x+1, 0, z+1),
-				       new BABYLON.Vector3(x, 0, z+1),
-				       new BABYLON.Vector3(x, 0, z)
-				   ], scene);
-				gridLines.color = gridLineColor;
+		for(var x = 0; x <= width; x++){
+			for(var z = 0; z <= height; z++){
+				lines = xLines.clone("cxLine" + x);
+				lines.position = new BABYLON.Vector3(x+1, 0, z);
+				gXLines.push(lines);
+				lines = zLines.clone("cxLine" + z);
+				lines.position = new BABYLON.Vector3(x, 0, z+1);
+				gZLines.push(lines);
 			}
 		}
 	}
 };
-ibeViewGrid();
 var testTerrain = ibeMeshTerrain();
 
 var ibeViewWireframe = function(){
@@ -77,3 +90,5 @@ var ibeViewWireframe = function(){
 var ibeViewSkybox = function(){};
 var ibeViewBoundingBox = function(){};
 var ibeViewHighlightingFaces = function(){};
+
+//ibeViewGrid();
