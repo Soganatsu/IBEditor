@@ -34,16 +34,16 @@ html, body {
 #menu-bar {
 	display:block;
 	position:absolute;
-	background:#EEE;
+	background: #222;
 	width:100%;
 	font-family: Arial;
-	box-shadow:0 0 5px #000;
+	box-shadow: 0 0 5px #000;
 	font-size:.8em;
 	z-index:1000;
+	color: white;
 }
 .menu-bar-separator{
-	cursor:default !important; 
-	background:#EEE !important; 
+	cursor:default !important;  
 	margin:0 !important; 
 	padding:0 !important;
 }
@@ -57,7 +57,8 @@ html, body {
 	padding:5px 15px 5px 15px;
 }
 #menu-bar li:hover{
-	background:#CCC;
+	background: #555;
+	cursor: pointer;
 }
 #menu-bar li:hover > ul{
 	display:block;
@@ -68,19 +69,30 @@ html, body {
 	margin-top:5px;
 	margin-left:-15px;
 	min-width:150px;
-	background:#EEE;
+	background: #333;
 	box-shadow:0 0 5px #000;
 	font-size:.9em;
+	color: #AAA;
 }
 #menu-bar li li {
 	display:block;
 	cursor:pointer;
 }
-
+#toolbar {
+    height: 34px;
+	
+    background: #222;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    box-shadow: 0 0 5px #000;
+    z-index: 999;
+    border: 1px solid #555;
+}
 .viewport-data{
 	position:absolute;
 	right:5px;
-	top:30px;
+	top:5px;
 }
 .viewport-data ul, .viewport-data li {
 	margin:0;
@@ -90,4 +102,170 @@ html, body {
 	font-size:.8em;
 	color:white;
 	text-align:right;
+}
+
+#brush-panel{
+	position:absolute;
+	width: 120px;
+	z-index:1;
+	text-align: center;
+	background: #EEE;
+	border: 1px solid;
+	border-radius: 3px;
+	padding: 10px 10px 10px 10px;
+	top: 5px;
+}
+#brush-panel h3{
+	font-family:Arial;
+	font-size:.8em;
+	margin:0 10px;
+	padding:0 10px;
+}
+.brush-icons{
+	width:100%;
+}
+.brush-icons, .tool-icons li{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.brush-icons li{
+	background-image:url("ibeditor_icon_set.png");
+	width:32px;
+	height:32px;
+	display: inline-block;
+	border-radius: 3px;
+	box-shadow: 0 0 1px;
+	margin-top: 1px;
+}
+.brush-icons li:hover{
+	cursor:pointer;
+	background-color: #F0F0F0;
+	-webkit-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+	color:green;
+}
+.brush-icons li:active {
+	
+}
+#tp-move{background-position:0 0;}
+#tp-rotate{background-position: -32px 0px;}
+#tp-scale{background-position: -64px 0;}
+#tp-arc-smooth{background-position: 0 32px;}
+#tp-arc-sharp{background-position: -32px 32px;}
+#tp-arc-flat{background-position: -64px 32px;}
+#tp-sculpt-up{background-position: -128px 0;}
+#tp-sculpt-down{background-position: -160px 0;}
+#tp-sculpt-smooth{background-position: -128px 32px;}
+#tp-place-object{background-position: 32px 0px;}
+#tp-place-empty{background-position: 32px 32px;}
+#tp-place-sound{background-position: -160px 32px;}
+#tp-add-terrain{background-position: -96px -32px;}
+#tp-paint-mat{background-position: -96px 0px;}
+
+#asset-panel {
+	
+}
+
+#camera-wheel {
+	
+}
+#camera-wheel-front {
+	
+}
+#camera-wheel-back {
+	
+}
+#camera-wheel-top {
+	
+}
+#camera-wheel-bottom {
+	
+}
+#camera-wheel-left {
+	
+}
+#camera-wheel-right {
+	
+}
+#left-panel {
+	position:absolute;
+	background: #222;
+	top: 60px;
+	left:0;
+	width:200px;
+	bottom: 225px;
+	box-shadow: 0 0px 4px rgba(0,0,0,.5);
+	z-index: 2;
+	overflow-y:auto;
+}
+#mid-panel {
+	position:absolute;
+	top: 60px;
+	left:200px;
+	right:300px;
+	bottom: 225px;
+}
+#right-panel {
+	position: absolute;
+	padding: 5px 0 0 0;
+	background: #222;
+	top: 60px;
+	right: 0;
+	width:300px;
+	bottom: 225px;
+	box-shadow: 0 0px 4px rgba(0,0,0,.5); z-index: 2;
+	overflow-y:auto;
+}
+#bottom-panel {
+    position: absolute; 
+    height: 225px; background: #222;  
+    left: 0;
+    right: 0;  bottom: 0; box-shadow: 0 0px 4px rgba(0,0,0,.5); 
+    z-index: 2; 
+	
+}
+#node-panel {
+	height:300px;
+	text-align: center;
+}
+#node-panel ul, #node-panel li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    font-size: .9em;
+    color: white;
+}
+#node-panel li {
+    display: inline-block;
+	
+    padding: 5px 10px 5px 10px;
+    background: #888;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0px 1px #555;
+    z-index: -1;
+}
+#node-panel li:hover {
+    background: rgb(101, 168, 101);
+	
+    cursor: pointer;
+}
+#node-panel li:active {
+    background: green;
+	
+}
+#node-editor {
+	width: 98%;
+	height: 100%;
+	background: #CCC;
+	margin: 0 auto;
+	padding: 0;
+	overflow: auto;
+	border-radius: 2px;
+	border: 1px solid #555;
+}
+#node-properties {
+	width:100%;
+	min-height:200px;
 }

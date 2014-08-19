@@ -23,8 +23,11 @@ var camPos, camPosN;
 
 var datetime = new Date();
 var time = datetime.getTime();
-var timeN;
-
+var timeN = 0;
+var cameraZoom = function(event){
+	
+};
+var listener = new window.keypress.Listener();
 function onDocumentMouseMove( event ) {
 	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 	mouse.y = -( event.clientY / window.innerHeight ) * 2 + 1;

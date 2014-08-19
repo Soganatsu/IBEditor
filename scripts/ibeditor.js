@@ -30,7 +30,7 @@ var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), s
 //This begins the creation of a function that we will 'call' just after it's built
 var createScene = function () {
   // Set default background color
-  scene.clearColor = new BABYLON.Color3(.15,.15,.15);
+  scene.clearColor = new BABYLON.Color3(.25,.25,.25);
   
   // This targets the camera to scene origin
   camera.setTarget(new BABYLON.Vector3.Zero());
@@ -44,8 +44,6 @@ var createScene = function () {
   // Dim the light a small amount
   light.intensity = .8;
 
-
-
   // Leave this function
   return scene;
 
@@ -53,12 +51,10 @@ var createScene = function () {
 
 // Now, call the createScene function that you just finished creating
 var scene = createScene();
-
 // Register a render loop to repeatedly render the scene
 engine.runRenderLoop(function () {
   scene.render();
 });
-
 // Watch for browser/canvas resize events
 window.addEventListener("resize", function () {
   engine.resize();
